@@ -2,10 +2,13 @@ import time
 import requests
 from flask import Flask
 from threading import Thread
+import sys
 import os
- 
-token = os.getenv("TOKEN")
-channel_id = os.getenv("CHANNEL_ID")
+
+TOKEN = str(sys.argv[1])
+CHANNEL_ID = str(sys.argv[1]) 
+token = os.getenv(TOKEN)
+channel_id = os.getenv(CHANNEL_ID)
  
 count = 0
 url = f"https://discord.com/api/v9/channels/{channel_id}/typing"
